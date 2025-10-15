@@ -28,7 +28,7 @@ const Blog = () => {
 
             <div className="flex-1 p-6 lg:p-8 text-left">
               <h3 className="relative text-[22px] sm:text-[24px] lg:text-[26px] leading-[30px] lg:leading-[34px] font-medium text-[#021228] mb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-gray-400 after:transition-all after:duration-500 hover:after:w-full">
-                AI Impact on Ipsum Nulla Glavrida Amet for the Future
+                AI Impact on Ipsum Nulla Glavrida for the Future
               </h3>
               <div className="flex flex-wrap items-center gap-2 text-[13px] sm:text-[14px] font-medium">
                 <span className="text-white bg-[#2b72ff] hover:bg-[#2362d9] px-3 py-0.5 rounded-2xl">COMPANY</span>
