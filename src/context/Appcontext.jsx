@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
   //navbar api fetch
   const getNavbar = async () => {
     try {
-      const res = await fetch(`${backendUrl}/navbarmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/navbarmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch Navbar");
