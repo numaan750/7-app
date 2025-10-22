@@ -5,8 +5,6 @@ const nextConfig = {
   },
   distDir: "build", // Prevent OneDrive link errors
   reactStrictMode: true,
-
-  // Add this for App Router support
   experimental: {
     appDir: true,
   },
