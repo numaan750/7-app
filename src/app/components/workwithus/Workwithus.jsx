@@ -1,7 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import Image from "next/image";
+import { AppContext } from "@/context/Appcontext";
 
 const Workwithus = () => {
+  const { workwithus, loading } = useContext(AppContext);
+
+  if (loading)
+    return <p className="text-center py-10">Loading workwithus...</p>;
+  if (!workwithus)
+    return <p className="text-center py-10">No workwithus data found</p>;
+
   return (
     <section className="relative bg-[#031520] text-white overflow-hidden py-20 font-[Outfit]">
       <div className="absolute inset-0">
@@ -23,60 +33,57 @@ const Workwithus = () => {
               className="text-[17px] leading-[22px] font-medium text-white bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] px-4 py-1 rounded-tl-[15px] rounded-br-[15px]"
               style={{ fontFamily: "Outfit, sans-serif", fontWeight: 500 }}
             >
-              WHY WORK WITH US
+              {workwithus.toptext}
             </span>
           </div>
 
           <h2
             className="
-              text-white font-medium mb-6
-              text-[31px] leading-[34px]          /* 📱 mobile */
-              sm:text-[32px] sm:leading-[40px]    /* 📱 tablets */
-              md:text-[40px] md:leading-[50px]    /* 💻 laptops */
-              lg:text-[46px] lg:leading-[55px]    /* 🖥️ desktops */
-              max-w-[90%] sm:max-w-[80%] md:max-w-[75%] lg:max-w-[70%]
-              text-left
-              text-balance
-              "
-            style={{ fontFamily: "Outfit, sans-serif", fontWeight: 500 }}
+    text-white font-medium mb-6
+    text-[31px] leading-[34px]
+    sm:text-[32px] sm:leading-[40px]
+    md:text-[40px] md:leading-[50px]
+    lg:text-[46px] lg:leading-[55px]
+    max-w-full sm:max-w-[80%] md:max-w-[75%] lg:max-w-[700px] 
+    text-left 
+  "
+            style={{
+              fontFamily: "Outfit, sans-serif",
+              fontWeight: 500,
+              margin: "0 auto",
+            }}
           >
-            We Guarantee Complex Modern Approach & Long-Lasting Results
+            {workwithus.heading}
           </h2>
 
           <p
             className="text-[19px] leading-[30px] font-light text-[#babbbf] mb-8 max-w-xl"
             style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300 }}
           >
-            If you’re augue placerat est, nec semper nisl erat ac ex el commodo
-            ac. Aenean congue lorem ipsum dolor sit amet – consectetur
-            adipiscing elit magna, molestie iaculis sit amet commodo tellus
-            consectetur luctus nec ullamcorper mattis nibh augue placerat est,
-            nec semper nisl eratac.
+            {workwithus.paragraph}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[21px] leading-[27px] font-normal text-white">
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> Top industry
-                specialists
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check1}
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> 100% Money back
-                guarantee
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check2}
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> Constant innovations
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check3}
               </li>
             </ul>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> Complex solutions
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check4}
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> Flexible prices
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check5}
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#00c1cf]">✔</span> 24/7 Customer support
+                <span className="text-[#00c1cf]">✔</span> {workwithus.check6}
               </li>
             </ul>
           </div>
@@ -85,7 +92,7 @@ const Workwithus = () => {
         <div className="flex-1 flex justify-center lg:justify-end">
           <div className="overflow-hidden rounded-bl-[80px]">
             <Image
-              src="/workwithus.jpg"
+              src={workwithus.mainimg}
               alt="Team Working"
               width={430}
               height={430}

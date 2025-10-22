@@ -1,20 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { Outfit } from "next/font/google";
+import { AppContext } from "@/context/Appcontext";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 const Reviewa = () => {
+  const { reviews, loading } = useContext(AppContext);
+
+  if(loading) return <p className="text-center py-10">loading revires.....</p>;
+  if(!reviews) return <p className="text-center py-10">No revires data found</p>;
   return (
     <div
       className={`${outfit.className} h-full w-full bg-gradient-to-t from-blue-50 to-white  py-4`}
     >
       <h2 className="text-[26px] leading-[33px] font-medium text-[#2c74ff] text-center mb-12">
-        What Clients Say About Us
+        {reviews.mainheading}
       </h2>
 
-      <div className="flex flex-nowrap justify-start gap-10 overflow-x-auto px-4 scrollbar-hidden">
+      <div className="flex flex-nowrap justify-start gap-10 overflow-x-auto px-5 scrollbar-hidden">
         <div className="min-w-[400px] font-[Outfit,sans-serif]">
           <div className="bg-white shadow-[0_4px_25px_rgba(0,0,0,0.08)] p-4  transition-all duration-300">
             <p className="text-[#2c74ff] text-7xl leading-none mb-3 font-serif">
@@ -25,22 +30,20 @@ const Reviewa = () => {
               className="text-[23px] leading-[30px] font-[400] text-[rgb(2,18,40)] mb-3"
               style={{ fontFamily: "Outfit, sans-serif", fontWeight: 400 }}
             >
-              Top quality & service
+              {reviews.cardheading1}
             </h3>
 
             <p
               className="text-[19px] leading-[30px] font-[300] text-[rgba(2,18,40,0.82)]"
               style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300 }}
             >
-              Nullam tincidunt – dignissim augue, eu condimentum rutrum lorem
-              ipsum eu condimentum libero orci dapibus dignissim velit vitae
-              fermentum.
+              {reviews.carddescription1}
             </p>
           </div>
 
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar1.jpg"
+              src={reviews.userimg1}
               alt="Christina Franklin"
               className="w-14 h-14 rounded-full object-cover"
             />
@@ -49,13 +52,13 @@ const Reviewa = () => {
                 className="text-[19px] leading-[25px] font-[400] text-[rgb(2,18,40)]"
                 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 400 }}
               >
-                Christina Franklin
+                {reviews.username1}
               </p>
               <p
                 className="text-[15px] leading-[20px] font-[400] text-[rgba(2,18,40,0.57)]"
                 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 400 }}
               >
-                Seven Studio – Artist
+                {reviews.usertitle1}
               </p>
             </div>
           </div>
@@ -67,25 +70,24 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              Exceptional service
+              {reviews.cardheading2}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              Ipsum dolor sit amet – consectetur adipiscing elit molestie
-              consectetuer luctus nec ullamcorper mattis nibh.
+              {reviews.carddescription2}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar2.jpg"
+              src={reviews.userimg2}
               alt="Gregory Brown"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Gregory Brown
+                {reviews.username2}
               </p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Seven Shop – Owner
+                {reviews.usertitle2}
               </p>
             </div>
           </div>
@@ -97,25 +99,24 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              They took web design to the next level
+              {reviews.cardheading2}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              Lorem ipsum dolor amet at ornare ex, quis fringilla tortor! Nunc
-              consectetur feugiat rutrum. Sed lorem ipsum sapien! Thank you!
+              {reviews.carddescription3}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar3.jpg"
+              src={reviews.userimg3}
               alt="Alexander Bright"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Alexander Bright
+                {reviews.username3}
               </p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Seven Consulting – CEO
+                {reviews.usertitle3}
               </p>
             </div>
           </div>
@@ -127,25 +128,24 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              Professional and reliable
+              {reviews.cardheading4}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              The entire process was smooth and professional. I’m really
-              impressed with their dedication and creativity.
+              {reviews.carddescription4}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar4.jpg"
+              src={reviews.userimg4}
               alt="Emma Khan"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Emma Khan
+                {reviews.username4}
               </p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Design Studio – Founder
+                {reviews.usertitle4}
               </p>
             </div>
           </div>
@@ -157,24 +157,23 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              Amazing service!
+              {reviews.cardheading5}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              From start to finish, they provided excellent communication and
-              outstanding results. Highly recommend!
+              {reviews.carddescription5}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar5.jpg"
+              src={reviews.userimg5}
               alt="Liam Brown"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Liam Brown
+                {reviews.username5}
               </p>
-              <p className="text-[14px] text-[rgba(2,18,40,0.6)]">Developer</p>
+              <p className="text-[14px] text-[rgba(2,18,40,0.6)]">{reviews.usertitle5}</p>
             </div>
           </div>
         </div>
@@ -185,25 +184,24 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              Superb results
+              {reviews.cardheading6}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              Their attention to detail is remarkable. The final product
-              exceeded all our expectations.
+              {reviews.carddescription6}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar6.jpg"
+              src={reviews.userimg6}
               alt="Ava Sheikh"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Ava Sheikh
+                {reviews.username6}
               </p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Brand Manager
+                {reviews.usertitle6}
               </p>
             </div>
           </div>
@@ -215,23 +213,22 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[20px] font-semibold text-[#021228] mb-3 text-left">
-              Loved working with them
+              {reviews.cardheading7}
             </h3>
             <p className="text-[16px] text-[rgba(2,18,40,0.75)] text-left">
-              Everything turned out even better than I imagined. I’ll definitely
-              work with them again.
+              {reviews.carddescription7}
             </p>
           </div>
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar7.jpg"
+              src={reviews.userimg7}
               alt="Noah Ali"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
-              <p className="text-[17px] font-medium text-[#021228]">Noah Ali</p>
+              <p className="text-[17px] font-medium text-[#021228]">{reviews.username7}</p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Entrepreneur
+                {reviews.usertitle7}
               </p>
             </div>
           </div>
@@ -243,26 +240,25 @@ const Reviewa = () => {
               “
             </p>
             <h3 className="text-[18px] font-semibold text-[#021228] mb-2 text-left">
-              Top-notch creativity
+              {reviews.cardheading8}
             </h3>
             <p className="text-[15px] text-[rgba(2,18,40,0.75)] leading-relaxed text-left">
-              They brought our vision to life beautifully. The design and
-              execution were flawless.
+              {reviews.carddescription8}
             </p>
           </div>
 
           <div className="flex items-center gap-4 mt-5 ml-2">
             <img
-              src="/avatar8.jpg"
+              src={reviews.userimg8}
               alt="Oliver Iqbal"
               className="w-14 h-14 rounded-full object-cover"
             />
             <div>
               <p className="text-[17px] font-medium text-[#021228]">
-                Oliver Iqbal
+                {reviews.username8}
               </p>
               <p className="text-[14px] text-[rgba(2,18,40,0.6)]">
-                Photographer
+                {reviews.usertitle8}
               </p>
             </div>
           </div>

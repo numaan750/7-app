@@ -8,3 +8,29 @@
   margin: auto;
   box-sizing: border-box;
 }
+
+/* ==== Custom Center Scrollbar ==== */
+.scroll-track {
+  width: 180px; /* small width, centered */
+  height: 4px;
+  background: #dbeafe;
+  border-radius: 4px;
+  position: relative;
+}
+
+.scroll-handle {
+  width: 60px; /* pointer length */
+  height: 6px;
+  background: #2c74ff;
+  border-radius: 3px;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  cursor: grab;
+  transition: background 0.2s ease;
+}
+
+.scroll-handle:active {
+  background: #1a56db;
+  cursor: grabbing;
+}

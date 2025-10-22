@@ -1,9 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Outfit } from "next/font/google";
-import { FaUser, FaSearch, FaShoppingBag, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaUser,
+  FaSearch,
+  FaShoppingBag,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+import { AppContext } from "@/context/Appcontext";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -15,6 +22,8 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { navbar, loading } = useContext(AppContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +42,13 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  if (loading) return <p className="text-center py-10">Loading Navbar...</p>;
+  if (!navbar) return <p className="text-center py-10">No Navbar data found</p>;
+
+  const logoSrc =
+    (scrolled ? navbar?.logo_black : navbar?.logo_white) ||
+    "/fallback-logo.png"; 
 
   return (
     <nav
@@ -53,7 +69,7 @@ const Navbar = () => {
 
           <Link href="/" className="flex items-center">
             <Image
-              src={scrolled ? "/logo-black.png" : "/logo-whit.png"}
+              src={logoSrc}
               alt="Company Logo"
               width={120}
               height={40}
@@ -67,38 +83,12 @@ const Navbar = () => {
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            <Link href="/" className="relative group">
-              Home
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/company" className="relative group">
-              Company
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/services" className="relative group">
-              Services
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/cases" className="relative group">
-              Cases
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/blog" className="relative group">
-              Blog
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/shop" className="relative group">
-              Shop
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/contact" className="relative group">
-              Contact
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/more" className="relative group">
-              More
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            {navbar?.links?.map((link) => (
+              <Link key={link.id} href={link.url} className="relative group">
+                {link.label}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
           </div>
 
           <div
@@ -124,7 +114,7 @@ const Navbar = () => {
 
           <div className="px-6 mt-2">
             <Image
-              src="/logo-black.png"
+              src={navbar?.logo_black || "/fallback-logo.png"}
               alt="Logo"
               width={120}
               height={40}
@@ -133,30 +123,18 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-col items-start px-6 py-6 space-y-6 text-[22px] font-normal text-gray-900 mt-6">
-            <Link href="/" onClick={() => setMenuOpen(false)} className="text-[#00c1cf] font-medium">
-              Home
-            </Link>
-            <Link href="/company" onClick={() => setMenuOpen(false)}>
-              Company
-            </Link>
-            <Link href="/services" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
-            <Link href="/cases" onClick={() => setMenuOpen(false)}>
-              Cases
-            </Link>
-            <Link href="/blog" onClick={() => setMenuOpen(false)}>
-              Blog
-            </Link>
-            <Link href="/shop" onClick={() => setMenuOpen(false)}>
-              Shop
-            </Link>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </Link>
-            <Link href="/more" onClick={() => setMenuOpen(false)}>
-              More
-            </Link>
+            {navbar?.links?.map((link) => (
+              <Link
+                key={link.id}
+                href={link.url}
+                onClick={() => setMenuOpen(false)}
+                className={
+                  link.label === "Home" ? "text-[#00c1cf] font-medium" : ""
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           <div className="flex justify-center pb-8 mt-auto">

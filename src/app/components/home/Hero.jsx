@@ -1,12 +1,18 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { AppContext } from "@/context/Appcontext";
 
 const Hero = () => {
+  const { home, loading } = useContext(AppContext);
+
+  if (loading) return <p className="text-center py-10">Loading Home...</p>;
+  if (!home) return <p className="text-center py-10">No Home data found</p>;
+
   return (
     <section className="relative min-h-screen w-full flex items-center text-white overflow-hidden">
       <Image
-        src="/hero-background.jpg"
+        src={home.backgroundimg}
         alt="Hero Background"
         fill
         priority
@@ -41,13 +47,7 @@ const Hero = () => {
             font-light text-white max-w-[900px]
           "
         >
-          <span className="font-bold text-[rgb(1,194,206)]">The </span>
-          <span className="font-bold text-white">
-            Seven<span className="text-[rgb(1,194,206)]">.</span>
-          </span>{" "}
-          <span className="font-light text-white">
-            Ultimate Website Builder
-          </span>
+          {home.heading}
         </h1>
 
         <p
@@ -58,8 +58,7 @@ const Hero = () => {
             mt-2
           "
         >
-          Elementor 2025 full-feature demo: lots of unique page layouts,
-          templates, loop items, online store & much more.
+          {home.paragraph}
         </p>
 
         <div
@@ -83,7 +82,7 @@ const Hero = () => {
               w-full sm:w-auto
             "
           >
-            Discover All Elements
+            {home.buttontext1}
           </button>
 
           <button
@@ -99,7 +98,7 @@ const Hero = () => {
               w-full sm:w-auto
             "
           >
-            Buy The7 – $39
+            {home.buttontext2}
           </button>
         </div>
       </div>

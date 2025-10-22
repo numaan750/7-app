@@ -1,6 +1,13 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
+import { AppContext } from "@/context/Appcontext";
 
 const Services = () => {
+  const { servies, loading } = useContext(AppContext);
+
+  if (loading) return <p className="text-center py-10">loading servoes....</p>;
+  if (!servies)
+    return <p className="text-center py-10">No servies Data found</p>;
   return (
     <section className="bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] py-20 px-4 text-center">
       <div className="Mycontainer">
@@ -13,21 +20,22 @@ const Services = () => {
             lineHeight: "22px",
           }}
         >
-          WHAT WE DO
+          {servies.toptext}
         </div>
 
         <h2
-          className="mb-6"
+          className="mb-8 text-center"
           style={{
             fontFamily: "Outfit, sans-serif",
             fontWeight: 500,
             fontSize: "46px",
             lineHeight: "55px",
             color: "rgb(2, 18, 40)",
+            maxWidth: "900px", 
+            margin: "0 auto", 
           }}
         >
-          A Full Range of Modern Marketing & <br />
-          Creative Services for Your Business
+          {servies.heading}
         </h2>
 
         <p
@@ -40,16 +48,14 @@ const Services = () => {
             color: "rgba(2, 18, 40, 0.82)",
           }}
         >
-          Etiam non dui felis. Proin posuere dapibus magna laoreet posuere.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit magna,
-          molestie iaculis.
+          {servies.paragraph}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start">
           <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
-                src="/serv1.jpg"
+                src={servies.card1img}
                 alt="Branding & Creative Services"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -64,7 +70,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                Branding & Creative Services
+                {servies.card1heading}
               </h3>
               <a
                 href="#"
@@ -79,10 +85,8 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                View Details
-                <span
-                  className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"
-                ></span>
+                {servies.card1paragraph}
+                <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
           </div>
@@ -90,7 +94,7 @@ const Services = () => {
           <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
-                src="/serv2.jpg"
+                src={servies.card2img}
                 alt="Web Design & Development"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -105,7 +109,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                Web Design & Development
+                {servies.card2heading}
               </h3>
               <a
                 href="#"
@@ -120,10 +124,8 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                View Details
-                <span
-                  className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"
-                ></span>
+                {servies.card2paragraph}
+                <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
           </div>
@@ -131,7 +133,7 @@ const Services = () => {
           <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto flex flex-col h-[395px]">
             <div className="overflow-hidden">
               <img
-                src="/serv3.jpg"
+                src={servies.card3img}
                 alt="Digital Marketing"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -146,7 +148,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                Digital Marketing
+                {servies.card3heading}
               </h3>
               <a
                 href="#"
@@ -161,7 +163,7 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                View Details
+                {servies.card3paragraph}
                 <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
