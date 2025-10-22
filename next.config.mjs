@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // ✅ Allow Cloudinary images
     domains: ["res.cloudinary.com"],
   },
-  // ✅ Prevent OneDrive link errors
-  distDir: "build", 
-
-  // (Optional but recommended)
+  distDir: "build", // Prevent OneDrive link errors
   reactStrictMode: true,
+
+  // Add this for App Router support
+  experimental: {
+    appDir: true,
+  },
 };
 
 export default nextConfig;
