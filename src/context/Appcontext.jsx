@@ -110,7 +110,7 @@ const AppProvider = ({ children }) => {
   //servies api
   const getservies = async () => {
     try {
-      const res = await fetch(`https://seven-app-back-end.vercel.app/api/serviesmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/servicemodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch servies");
