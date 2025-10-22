@@ -12,7 +12,7 @@ const Aboutus = () => {
     <section className="py-20 bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] flex items-center justify-center  font-[Outfit,sans-serif]">
       <div className="Mycontainer flex flex-col lg:flex-row items-start justify-between gap-20 w-full max-w-7xl">
         <div className="w-full lg:w-1/2 flex flex-col justify-center gap-6 text-left order-1 lg:order-2">
-          <span className="inline-block w-[30%] min-w-fit max-w-[200px] bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] text-white font-medium rounded-tl-[15px] rounded-br-[15px] px-3 py-1.5 text-xs sm:text-sm md:text-base text-center whitespace-nowrap">
+          <span className="inline-block w-[30%] min-w-fit max-w-[200px] bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] text-white font-medium rounded-tl-[15px] rounded-br-[15px] px-3 py-1.5 text-xl sm:text-xl md:text-xl text-center whitespace-nowrap">
             {aboutus.toptext}
           </span>
 

@@ -12,11 +12,11 @@ const Services = () => {
     <section className="bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] py-20 px-4 text-center">
       <div className="Mycontainer">
         <div
-          className="inline-block bg-blue-600 text-white bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] rounded-tl-[15px] rounded-br-[15px] px-4 py-1 mb-6"
+          className="inline-block bg-blue-600 text-white bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] rounded-tl-[15px] rounded-br-[15px] px-7 py-1 mb-6"
           style={{
             fontFamily: "Outfit, sans-serif",
             fontWeight: 500,
-            fontSize: "17px",
+            fontSize: "22`px",
             lineHeight: "22px",
           }}
         >
@@ -24,15 +24,13 @@ const Services = () => {
         </div>
 
         <h2
-          className="mb-8 text-center"
+          className="mb-8 text-center text-[25px] sm:text-[25px] md:text-[30px] lg:text-[40px] xl:text-[50px] font-medium w-[900px] leading-tight"
           style={{
             fontFamily: "Outfit, sans-serif",
-            fontWeight: 500,
-            fontSize: "46px",
-            lineHeight: "55px",
+            lineHeight: "1.2",
             color: "rgb(2, 18, 40)",
-            maxWidth: "900px", 
-            margin: "0 auto", 
+            maxWidth: "90%",
+            margin: "0 auto",
           }}
         >
           {servies.heading}
@@ -51,7 +49,7 @@ const Services = () => {
           {servies.paragraph}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start ">
           <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img

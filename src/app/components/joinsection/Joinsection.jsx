@@ -24,7 +24,7 @@ const Joinsection = () => {
           </div>
         </div>
         <div className="flex-1 max-w-xl">
-          <div className="inline-block mb-5 text-[26px] leading-[34px] px-4 py-1.5 rounded-tl-[15px] rounded-br-[15px] bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] text-white font-medium">
+          <div className="inline-block mb-5 text-[19px] leading-[34px] px-4 py-1.5 rounded-tl-[15px] rounded-br-[15px] bg-gradient-to-r from-[#2b72ff] to-[#04bdd1] text-white font-medium">
             {joinus.toptext}
           </div>
 

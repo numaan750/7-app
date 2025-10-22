@@ -37,7 +37,7 @@ const Companies = () => {
               <img
                 src={logo}
                 alt={`Company ${index + 1}`}
-                className="object-contain opacity-100 hover:opacity-70 transition-all duration-300 h-[80px] sm:h-[100px] md:h-[110px] lg:h-[130px] xl:h-[140px]"
+                className="object-contain opacity-100 hover:opacity-70 transition-all duration-300 h-[100px] sm:h-[100px] md:h-[110px] lg:h-[130px] xl:h-[140px]"
               />
             </div>
           ))}

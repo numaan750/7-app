@@ -39,14 +39,12 @@ const Workwithus = () => {
 
           <h2
             className="
-    text-white font-medium mb-6
-    text-[31px] leading-[34px]
-    sm:text-[32px] sm:leading-[40px]
-    md:text-[40px] md:leading-[50px]
-    lg:text-[46px] lg:leading-[55px]
-    max-w-full sm:max-w-[80%] md:max-w-[75%] lg:max-w-[700px] 
-    text-left 
-  "
+             text-white font-medium mb-6
+                text-[31px] leading-[34px]
+                sm:text-[32px] sm:leading-[40px] sm:text-left sm:max-w-full
+                md:text-[40px] md:leading-[50px] md:text-left md:max-w-[75%]
+                lg:text-[46px] lg:leading-[55px] lg:text-start lg:max-w-[700px]
+                "
             style={{
               fontFamily: "Outfit, sans-serif",
               fontWeight: 500,
@@ -94,9 +92,9 @@ const Workwithus = () => {
             <Image
               src={workwithus.mainimg}
               alt="Team Working"
-              width={430}
-              height={430}
-              className="object-cover w-full h-full"
+              width={800}
+              height={400}
+              className="object-cover w-full h-auto"
             />
           </div>
         </div>
