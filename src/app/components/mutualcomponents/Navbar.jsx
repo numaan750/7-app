@@ -48,11 +48,13 @@ const Navbar = () => {
 
   const logoSrc =
     (scrolled ? navbar?.logo_black : navbar?.logo_white) ||
-    "/fallback-logo.png"; 
+    "/fallback-logo.png";
 
   return (
     <nav
-      className={`${outfit.className} fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`${
+        outfit.className
+      } fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       } ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
     >
@@ -67,14 +69,14 @@ const Navbar = () => {
             <FaBars />
           </button>
 
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src={logoSrc}
               alt="Company Logo"
-              width={120}
-              height={40}
+              width={110}
+              height={35}
               priority
-              className="object-contain transition-all duration-300"
+              style={{ width: "120px", height: "40px" }} // Fixed size
             />
           </Link>
 

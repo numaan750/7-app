@@ -4,10 +4,10 @@ import Image from "next/image";
 import { AppContext } from "@/context/Appcontext";
 
 const Aboutus = () => {
-const { aboutus, loading } = useContext(AppContext);
+  const { aboutus, loading } = useContext(AppContext);
 
-  if(loading) return <p className="text-center py-10">Loading Home...</p>;
-  if(!aboutus) return <p className="text-center py-10">No Home data found</p>;
+  if (loading) return <p className="text-center py-10">Loading Home...</p>;
+  if (!aboutus) return <p className="text-center py-10">No Home data found</p>;
   return (
     <section className="py-20 bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] flex items-center justify-center  font-[Outfit,sans-serif]">
       <div className="Mycontainer flex flex-col lg:flex-row items-start justify-between gap-20 w-full max-w-7xl">
@@ -39,7 +39,7 @@ const { aboutus, loading } = useContext(AppContext);
 
             <div className="text-left">
               <h3 className="text-[46px] sm:text-[50px] md:text-[56px] font-semibold text-[#2c74ff] leading-[50px] md:leading-[56px]">
-               {aboutus.number2}
+                {aboutus.number2}
               </h3>
               <p className="text-[18px] sm:text-[19px] md:text-[21px] font-normal text-[#021229]">
                 {aboutus.p2}
@@ -49,13 +49,14 @@ const { aboutus, loading } = useContext(AppContext);
         </div>
 
         <div className="w-full lg:w-1/2 flex justify-start order-2 lg:order-1 mt-6 lg:mt-0">
-          <div className="overflow-hidden shadow-lg rounded-br-[70px] w-full lg:w-auto">
+          <div className="overflow-hidden shadow-lg rounded-br-[70px] w-full lg:w-auto h-full">
             <Image
               src={aboutus.mainimg}
               alt="Team of professionals"
               width={600}
               height={400}
-              className="object-cover w-full sm:w-full md:w-[90%] lg:w-auto xl:w-auto h-[280px] sm:h-[340px] md:h-[380px] lg:h-[430px] xl:h-[560px] transition-all duration-300 ease-in-out"
+              className="object-cover w-full h-full transition-all duration-300 ease-in-out"
+              style={{ minHeight: "100%" }}
             />
           </div>
         </div>
