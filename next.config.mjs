@@ -1,13 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ["res.cloudinary.com"],
-  },
-  distDir: "build", // Prevent OneDrive link errors
+  images: { domains: ["res.cloudinary.com"] },
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
+  experimental: { appDir: true },
 };
 
 export default nextConfig;
