@@ -57,7 +57,7 @@ const AppProvider = ({ children }) => {
   //home ki api
   const gethome = async () => {
     try {
-      const res = await fetch(`${backendUrl}/homemodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/homemodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch Home");
@@ -75,7 +75,7 @@ const AppProvider = ({ children }) => {
   //about api
   const getaboutus = async () => {
     try {
-      const res = await fetch(`${backendUrl}/aboutmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/aboutmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch aboutus");
@@ -93,7 +93,7 @@ const AppProvider = ({ children }) => {
   //componies api
   const getcomponeies = async () => {
     try {
-      const res = await fetch(`${backendUrl}/componeiesmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/componeiesmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch componeies");
@@ -110,7 +110,7 @@ const AppProvider = ({ children }) => {
   //servies api
   const getservies = async () => {
     try {
-      const res = await fetch(`${backendUrl}/serviesmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/serviesmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch servies");
@@ -128,7 +128,7 @@ const AppProvider = ({ children }) => {
   //workwithus api
   const getworkwithus = async () => {
     try {
-      const res = await fetch(`${backendUrl}/workwithusmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/workwithusmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch workwithus");
@@ -145,7 +145,7 @@ const AppProvider = ({ children }) => {
   // join apis
   const getjoinus = async () => {
     try {
-      const res = await fetch(`${backendUrl}/joinusmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/joinusmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch joinus");
@@ -162,7 +162,7 @@ const AppProvider = ({ children }) => {
   //blogs api
   const getblog = async () => {
     try {
-      const res = await fetch(`${backendUrl}/blogmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/blogmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch blog");
@@ -179,7 +179,7 @@ const AppProvider = ({ children }) => {
   //Footer api
   const getfooter = async () => {
     try {
-      const res = await fetch(`${backendUrl}/footermodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/footermodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch footer");
@@ -196,7 +196,7 @@ const AppProvider = ({ children }) => {
  //  reviews 
   const getreviews = async () => {
     try {
-      const res = await fetch(`${backendUrl}/reviewsmodels`, {
+      const res = await fetch(`https://seven-app-back-end.vercel.app/api/reviewsmodels`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to fetch reviews");
