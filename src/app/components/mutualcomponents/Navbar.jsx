@@ -85,9 +85,10 @@ const Navbar = () => {
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            {navbar?.links?.map((link) => (
-              <Link key={link.id} href={link.url} className="relative group">
-                {link.label}
+            {navbar?.navlinks?.map((link, index) => (
+              <Link key={index} href={link.link} className="relative group">
+                {link.link}{" "}
+                {/* Agar aapke pas label bhi hai to use replace karen */}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00c1cf] rounded-full transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
@@ -116,7 +117,7 @@ const Navbar = () => {
 
           <div className="px-6 mt-2">
             <Image
-              src={navbar?.logo_black || "/fallback-logo.png"}
+              src={logoSrc}
               alt="Logo"
               width={120}
               height={40}

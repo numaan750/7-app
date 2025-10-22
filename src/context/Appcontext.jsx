@@ -23,9 +23,7 @@ const AppProvider = ({ children }) => {
     try {
       const res = await fetch(
         `https://seven-app-back-end.vercel.app/api/navbarmodels`,
-        {
-          cache: "no-store",
-        }
+        { cache: "no-store" }
       );
       if (!res.ok) throw new Error("Failed to fetch Navbar");
 
@@ -34,24 +32,21 @@ const AppProvider = ({ children }) => {
 
       const raw = Array.isArray(data) ? data[0] : data;
 
-      if (raw && raw.logo) {
+      if (raw) {
         const normalized = {
-          logo_white: raw.logo,
-          logo_black: raw.logo,
-          links: raw.navlinks?.map((item, index) => ({
-            id: index,
-            label: item.link,
-            url: `/${item.link.toLowerCase().replace(/\s+/g, "-")}`,
-          })),
+          logo_white: raw.logo_white || "/fallback-logo.png",
+          logo_black: raw.logo_black || "/fallback-logo.png",
+          navlinks: raw.navlinks || [],
         };
 
         setNavbar(normalized);
       } else {
-        console.warn(" No Navbar data found in API");
+        console.warn("No Navbar data found in API");
         setNavbar(null);
       }
     } catch (error) {
       console.error("Error fetching navbar:", error);
+      setNavbar(null);
     } finally {
       setLoading(false);
     }
