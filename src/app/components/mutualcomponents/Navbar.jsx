@@ -114,7 +114,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Logo */}
           <div className="px-6 mt-2">
             <Image
               src={logoSrc}
