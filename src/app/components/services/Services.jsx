@@ -50,7 +50,7 @@ const Services = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start ">
-          <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto">
+          <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
                 src={servies.card1img}
@@ -89,7 +89,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto">
+          <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
                 src={servies.card2img}
@@ -128,7 +128,7 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow-lg overflow-hidden w-full max-w-sm mx-auto flex flex-col h-[395px]">
+          <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
                 src={servies.card3img}
