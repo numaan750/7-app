@@ -140,7 +140,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex justify-center pb-8 mt-auto">
-            <button className="bg-[#00c1cf] text-white px-10 py-3 rounded-full text-[18px] hover:bg-[#00b2be] transition">
+            <button className="bg-[#2b72ff] text-white px-10 py-3 rounded-full text-[18px] hover:bg-[#0e49bf] transition">
               Get Started
             </button>
           </div>
