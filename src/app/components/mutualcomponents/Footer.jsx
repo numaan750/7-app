@@ -40,16 +40,17 @@ const Footer = () => {
           </button>
         </div>
 
-        <div className="flex flex-col justify-end px-35">
-          <h3 className="text-[#2b72ff] font-semibold mb-6">
+        <div className="flex flex-col justify-end items-center text-center px-6 sm:px-10 md:px-16 lg:px-35 md:items-start md:text-left">
+          <h3 className="text-[#2b72ff] font-semibold text-[18px] sm:text-[19px] leading-[28px] mb-6 uppercase tracking-wide">
             {footer.section2?.title}
           </h3>
-          <ul className="space-y-2 text-[#364354]">
+
+          <ul className="space-y-3 text-[#364354] text-[16px] sm:text-[17px] font-normal leading-[26px]">
             {footer.section2?.items?.map((item, i) => (
-              <li key={i}>
+              <li key={i} className="whitespace-nowrap">
                 <Link
                   href="#"
-                  className="hover:text-[#6a9bfc] transition-colors"
+                  className="hover:text-[#6a9bfc] transition-colors duration-200"
                 >
                   {item.text}
                 </Link>
@@ -58,16 +59,17 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-center items-center text-center px-6 min-[1020px]:px-20">
-          <h3 className="text-[#2b72ff] font-semibold mb-3">
+        <div className="flex flex-col justify-end items-center text-center px-6 sm:px-10 md:px-16 lg:px-20 md:items-start md:text-left">
+          <h3 className="text-[#2b72ff] font-semibold text-[18px] sm:text-[19px] leading-[28px] mb-6 uppercase tracking-wide">
             {footer.section3?.title}
           </h3>
-          <ul className="space-y-2 text-[#364354]">
+
+          <ul className="space-y-3 text-[#364354] text-[16px] sm:text-[17px] font-normal leading-[26px]">
             {footer.section3?.items?.map((item, i) => (
-              <li key={i}>
+              <li key={i} className="whitespace-nowrap">
                 <Link
                   href="#"
-                  className="hover:text-[#6a9bfc] transition-colors"
+                  className="hover:text-[#6a9bfc] transition-colors duration-200 block"
                 >
                   {item.text}
                 </Link>
