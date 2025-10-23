@@ -40,7 +40,7 @@ const Footer = () => {
           </button>
         </div>
 
-        <div className="flex flex-col justify-end px-4">
+        <div className="flex flex-col justify-end px-35">
           <h3 className="text-[#2b72ff] font-semibold mb-6">
             {footer.section2?.title}
           </h3>
