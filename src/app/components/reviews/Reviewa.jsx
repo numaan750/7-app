@@ -290,7 +290,7 @@ const Reviewa = () => {
             key={idx}
             onClick={() => instanceRef.current?.moveToIdx(idx)}
             className={`h-1 w-12 rounded-full transition-all duration-300 ${
-              currentSlide === idx ? "bg-[#2c74ff]" : "bg-gray-300"
+              currentSlide === idx ? "bg-[#b0cdff]" : "bg-[#d4e4ff]"
             }`}
           ></button>
         ))}
