@@ -109,11 +109,11 @@ const Hero = () => {
             className="
               bg-[#00c1cf] 
               text-white 
-              px-6 sm:px-8 md:px-10 
+              px-9 sm:px-11 md:px-15 
               py-3 md:py-4 rounded-full 
               text-[16px] sm:text-[18px] md:text-[20px] 
               font-normal
-              hover:bg-[#00c1cf]/80
+              hover:bg-[#00a4b0]/80
               transition-all duration-300 
               w-full sm:w-auto
             "
