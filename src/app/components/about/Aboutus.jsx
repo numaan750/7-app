@@ -24,20 +24,22 @@ const Aboutus = () => {
             {aboutus.paragraph}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 lg:gap-16 pt-0.5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 lg:gap-16 pt-5">
             <div className="text-left">
+              <div className="flex pt-8 py-2">
               <p className="text-[22px] sm:text-[24px] md:text-[26px] font-medium text-[#2c74ff]">
                 {aboutus.smaltext}
               </p>
               <h3 className="text-[46px] sm:text-[50px] md:text-[56px] font-semibold text-[#2c74ff] leading-[50px] md:leading-[56px]">
                 {aboutus.number1}
               </h3>
+               </div> 
               <p className="text-[18px] sm:text-[19px] md:text-[21px] font-normal text-[#021229]">
                 {aboutus.p1}
               </p>
             </div>
 
-            <div className="text-left">
+            <div className="text-left pt-8">
               <h3 className="text-[46px] sm:text-[50px] md:text-[56px] font-semibold text-[#2c74ff] leading-[50px] md:leading-[56px]">
                 {aboutus.number2}
               </h3>
