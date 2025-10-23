@@ -34,7 +34,7 @@ const Joinsection = () => {
           </h2>
 
           <div className="flex flex-col sm:flex-row items-start gap-4">
-            <button className="bg-[#1A56FF] hover:bg-[#2362d9] text-white text-[18px] sm:text-[20px] leading-[20px] font-normal px-10 py-5 rounded-full transition-all">
+            <button className="bg-[#2b72ff] hover:bg-[#2362d9] text-white text-[18px] sm:text-[20px] leading-[20px] font-normal px-10 py-5 rounded-full transition-all">
               {joinus.buttontext}
             </button>
 
