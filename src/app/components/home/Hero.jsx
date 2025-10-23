@@ -9,6 +9,12 @@ const Hero = () => {
   if (loading) return <p className="text-center py-10">Loading Home...</p>;
   if (!home) return <p className="text-center py-10">No Home data found</p>;
 
+  // Split heading words
+  const words = home.heading.split(" ");
+  const firstWord = words[0] || "";
+  const secondWord = words[1] || "";
+  const rest = words.slice(2).join(" ");
+
   return (
     <section className="relative min-h-screen w-full flex items-center text-white overflow-hidden">
       <Image
@@ -44,10 +50,15 @@ const Hero = () => {
           className="
             text-[38px] sm:text-[48px] md:text-[62px] lg:text-[74px] 
             leading-[50px] sm:leading-[65px] md:leading-[78px] lg:leading-[89px]
-            font-light text-white max-w-[900px]
+            max-w-[900px]
           "
         >
-          {home.heading}
+          <span className="font-semibold text-[#00c1cf]">{firstWord}</span>{" "}
+          <span className="font-semibold text-white">
+            {secondWord}
+            <span className="text-[#00c1cf]">.</span>
+          </span>{" "}
+          <span className="font-light text-white">{rest}</span>
         </h1>
 
         <p
