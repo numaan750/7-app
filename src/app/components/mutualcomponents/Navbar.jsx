@@ -105,51 +105,47 @@ const Navbar = () => {
         </div>
       )}
 
-{menuOpen && (
-  <div className="h-screen inset-0 bg-white z-50 flex flex-col transition-all duration-500">
-    {/* ❌ Close Icon */}
-    <div className="flex justify-end px-6 pt-6">
-      <FaTimes
-        className="text-gray-800 text-3xl cursor-pointer"
-        onClick={() => setMenuOpen(false)} // only this closes menu
-      />
-    </div>
+      {menuOpen && (
+        <div className="h-screen inset-0 bg-white z-50 flex flex-col transition-all duration-500">
+          <div className="flex justify-end px-6 pt-6">
+            <FaTimes
+              className="text-gray-800 text-3xl cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            />
+          </div>
 
-    {/* Logo */}
-    <div className="px-6 mt-2">
-      <Image
-        src={logoSrc}
-        alt="Logo"
-        width={120}
-        height={40}
-        className="object-contain"
-      />
-    </div>
+          {/* Logo */}
+          <div className="px-6 mt-2">
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
+          </div>
 
-    {/* ✅ Navlinks stay open (no close on click) */}
-    <div className="flex flex-col items-start px-6 py-6 space-y-3 text-[22px] font-normal text-gray-900 mt-6">
-      {navbar?.navlinks?.map((link, index) => (
-        <Link
-          key={index}
-          href={link.link}
-          className={`${
-            link.link === "/" ? "text-[#00c1cf] font-medium" : ""
-          }`}
-        >
-          {link.link}
-        </Link>
-      ))}
-    </div>
+          <div className="flex flex-col items-start px-6 py-6 space-y-3 text-[22px] font-normal text-gray-900 mt-6">
+            {navbar?.navlinks?.map((link, index) => (
+              <Link
+                key={index}
+                href={link.link}
+                className={`${
+                  link.link === "/" ? "text-[#00c1cf] font-medium" : ""
+                }`}
+              >
+                {link.link}
+              </Link>
+            ))}
+          </div>
 
-    {/* Button */}
-    <div className="flex justify-center pb-8 mt-auto">
-      <button className="bg-[#00c1cf] text-white px-10 py-3 rounded-full text-[18px] hover:bg-[#00b2be] transition">
-        Get Started
-      </button>
-    </div>
-  </div>
-)}
-
+          <div className="flex justify-center pb-8 mt-auto">
+            <button className="bg-[#00c1cf] text-white px-10 py-3 rounded-full text-[18px] hover:bg-[#00b2be] transition">
+              Get Started
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
