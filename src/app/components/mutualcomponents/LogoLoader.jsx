@@ -21,7 +21,7 @@ const LogoLoader = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-blue-950 flex items-center justify-center z-[9999]">
+    <div className="fixed h-screen inset-0 bg-blue-950 flex items-center justify-center z-[9999]">
       <img
         src="/Logo-whit.png"
         alt="Logo"
