@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
   // Navbar API
   const getNavbar = async () => {
     try {
-      const res = await fetch(`${backendUrl}/navbarmodels`, { cache: "no-store" });
+      const res = await fetch("https://seven-app-back-end.vercel.app/api/navbarmodels", { cache: "no-store" });
       if (!res.ok) throw new Error("Failed to fetch Navbar");
 
       const data = await res.json();
@@ -57,7 +57,7 @@ const AppProvider = ({ children }) => {
   };
 
   // All APIs
-  const getHome = () => fetchData(`${backendUrl}/homemodels`, setHome);
+  const getHome = () => fetchData(`"https://seven-app-back-end.vercel.app/api/homemodels"`, setHome);
   const getAboutus = () => fetchData(`${backendUrl}/aboutmodels`, setAboutus);
   const getcomponeies = () => fetchData(`${backendUrl}/componeiesmodels`, setcomponeies);
   const getservices = () => fetchData(`${backendUrl}/servicemodels`, setservices);
