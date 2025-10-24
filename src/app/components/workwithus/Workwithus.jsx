@@ -5,12 +5,11 @@ import Image from "next/image";
 import { AppContext } from "@/context/Appcontext";
 
 const Workwithus = () => {
-  const { workwithus, loading } = useContext(AppContext);
+  const { workwithus} = useContext(AppContext);
 
-  if (loading)
-    return <p className="text-center py-10">Loading workwithus...</p>;
+
   if (!workwithus)
-    return <p className="text-center py-10">No workwithus data found</p>;
+    return <p className="text-center py-10"></p>;
 
   return (
     <section className="relative bg-[#031520] text-white overflow-hidden py-20 font-[Outfit]">

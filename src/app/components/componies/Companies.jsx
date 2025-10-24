@@ -5,9 +5,9 @@ import React, { useContext } from "react";
 const Companies = () => {
   const { componeies, loading } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">Loading companies...</p>;
+  // if (loading) return <p className="text-center py-10">Loading companies...</p>;
   if (!componeies)
-    return <p className="text-center py-10">No company data found</p>;
+    return <p className="text-center py-10"></p>;
 
   return (
     <section

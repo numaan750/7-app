@@ -34,3 +34,26 @@
   background: #1a56db;
   cursor: grabbing;
 }
+
+
+/* Zoom in (entry) */
+@keyframes logoZoomIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Zoom out (exit) - poori screen se */
+@keyframes logoZoomOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.animate-logoZoomIn {
+  animation: logoZoomIn 1.5s ease-in-out forwards;
+}
+
+.animate-logoZoomOut {
+  animation: logoZoomOut 0.7s ease-in forwards; /* forwards ensures final state remain */
+}
+

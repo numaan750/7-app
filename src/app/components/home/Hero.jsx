@@ -5,10 +5,10 @@ import { AppContext } from "@/context/Appcontext";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const { home, loading } = useContext(AppContext);
+  const { home } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">Loading Home...</p>;
-  if (!home) return <p className="text-center py-10">No Home data found</p>;
+  // if (loading) return <p className="text-center py-10">Loading Home...</p>;
+  if (!home || !home.heading) return null;
 
   const words = home.heading.split(" ");
   const firstWord = words[0] || "";

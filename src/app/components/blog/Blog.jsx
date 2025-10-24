@@ -6,8 +6,8 @@ import { AppContext } from "@/context/Appcontext";
 const Blog = () => {
   const { blog, loading } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">loading blog.....</p>;
-  if (!blog) return <p className="text-center py-10">No blog data found</p>;
+  // if (loading) return <p className="text-center py-10">loading blog.....</p>;
+  if (!blog) return <p className="text-center py-10"></p>;
 
   return (
     <section className="bg-white py-20 font-[Outfit]">

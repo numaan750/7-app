@@ -9,8 +9,8 @@ import { AppContext } from "@/context/Appcontext";
 const Footer = () => {
   const { footer, loading } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">Loading footer...</p>;
-  if (!footer) return <p className="text-center py-10">No footer data found</p>;
+  // if (loading) return <p className="text-center py-10">Loading footer...</p>;
+  if (!footer) return <p className="text-center py-10"></p>;
 
   return (
     <footer className="bg-[#f5f6f7] text-gray-700 pt-16 pb-10 border-t border-gray-200">

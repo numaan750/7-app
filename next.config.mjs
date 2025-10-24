@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: { domains: ["res.cloudinary.com"] },
   reactStrictMode: true,
   experimental: { appDir: true },
+  images: { // ← yahan 'images' hona chahiye
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 export default nextConfig;

@@ -6,8 +6,8 @@ import { AppContext } from "@/context/Appcontext";
 const Aboutus = () => {
   const { aboutus, loading } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">Loading Home...</p>;
-  if (!aboutus) return <p className="text-center py-10">No Home data found</p>;
+  // if (loading) return <p className="text-center py-10">Loading Home...</p>;
+  if (!aboutus) return <p className="text-center py-10"></p>;
   return (
     <section className="py-20 bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] flex items-center justify-center  font-[Outfit,sans-serif]">
       <div className="Mycontainer flex flex-col lg:flex-row items-start justify-between gap-20 w-full max-w-7xl">

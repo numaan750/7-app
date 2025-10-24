@@ -32,9 +32,9 @@ const Reviewa = () => {
     },
   });
 
-  if (loading) return <p className="text-center py-10">loading reviews.....</p>;
+  // if (loading) return <p className="text-center py-10">loading reviews.....</p>;
   if (!reviews)
-    return <p className="text-center py-10">No reviews data found</p>;
+    return <p className="text-center py-10"></p>;
 
   return (
     <div

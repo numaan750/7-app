@@ -1,12 +1,13 @@
-import React from 'react'
+"use client";
+import React from 'react';
 import Main from "../app/main/Main";
 
-const page = () => {
+const Page = ({ setPageLoaded }) => {
   return (
     <div>
-      <Main/>
+      <Main onLoadComplete={setPageLoaded} />
     </div>
   )
 }
 
-export default page
+export default Page;

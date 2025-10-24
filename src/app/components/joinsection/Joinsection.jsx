@@ -6,9 +6,9 @@ import { AppContext } from "@/context/Appcontext";
 
 const Joinsection = () => {
   const { joinus, loading } = useContext(AppContext);
-  if (loading) return <p className="text-center py-10">loading joinus.....</p>;
+  // if (loading) return <p className="text-center py-10">loading joinus.....</p>;
   if (!joinus)
-    return <p className="text bg-center py-10">No joinus data Found</p>;
+    return <p className="text bg-center py-10"></p>;
   return (
     <section className="w-full bg-white py-20 font-[Outfit]">
       <div className="Mycontainer mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12">

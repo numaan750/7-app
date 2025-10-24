@@ -2,12 +2,12 @@
 import React, { useContext } from "react";
 import { AppContext } from "@/context/Appcontext";
 
-const Services = () => {
-  const { servies, loading } = useContext(AppContext);
+const services = () => {
+  const { services, loading } = useContext(AppContext);
 
-  if (loading) return <p className="text-center py-10">loading servoes....</p>;
-  if (!servies)
-    return <p className="text-center py-10">No servies Data found</p>;
+  // if (loading) return <p className="text-center py-10">loading servoes....</p>;
+  if (!services)
+    return <p className="text-center py-10"></p>;
   return (
     <section className="bg-gradient-to-t from-[#e8f0ff] to-[#ffffff] py-20 px-4 text-center">
       <div className="Mycontainer">
@@ -20,7 +20,7 @@ const Services = () => {
             lineHeight: "22px",
           }}
         >
-          {servies.toptext}
+          {services.toptext}
         </div>
 
         <h2
@@ -33,7 +33,7 @@ const Services = () => {
             margin: "0 auto",
           }}
         >
-          {servies.heading}
+          {services.heading}
         </h2>
 
         <p
@@ -46,14 +46,14 @@ const Services = () => {
             color: "rgba(2, 18, 40, 0.82)",
           }}
         >
-          {servies.paragraph}
+          {services.paragraph}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start ">
           <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
-                src={servies.card1img}
+                src={services.card1img}
                 alt="Branding & Creative Services"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -68,7 +68,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                {servies.card1heading}
+                {services.card1heading}
               </h3>
               <a
                 href="#"
@@ -83,7 +83,7 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                {servies.card1paragraph}
+                {services.card1paragraph}
                 <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
@@ -92,7 +92,7 @@ const Services = () => {
           <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
-                src={servies.card2img}
+                src={services.card2img}
                 alt="Web Design & Development"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -107,7 +107,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                {servies.card2heading}
+                {services.card2heading}
               </h3>
               <a
                 href="#"
@@ -122,7 +122,7 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                {servies.card2paragraph}
+                {services.card2paragraph}
                 <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
@@ -131,7 +131,7 @@ const Services = () => {
           <div className="bg-white shadow-lg overflow-hidden w-full sm:max-w-md md:max-w-auto lg:max-w-sm mx-auto">
             <div className="overflow-hidden">
               <img
-                src={servies.card3img}
+                src={services.card3img}
                 alt="Digital Marketing"
                 className="w-full h-56 object-cover rounded-br-[50px] transition-transform duration-500 hover:scale-105"
               />
@@ -146,7 +146,7 @@ const Services = () => {
                   color: "rgb(2, 18, 40)",
                 }}
               >
-                {servies.card3heading}
+                {services.card3heading}
               </h3>
               <a
                 href="#"
@@ -161,7 +161,7 @@ const Services = () => {
                 }}
                 className="uppercase tracking-wide relative pb-2 group"
               >
-                {servies.card3paragraph}
+                {services.card3paragraph}
                 <span className="block absolute left-0 bottom-0 w-full h-[1.5px] bg-[#d1e1ff] transition-colors duration-300 group-hover:bg-[#1a5fff]"></span>
               </a>
             </div>
@@ -172,4 +172,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default services;
