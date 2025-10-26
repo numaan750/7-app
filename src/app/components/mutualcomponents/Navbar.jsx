@@ -43,9 +43,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // if (loading) return <p className="text-center py-10">Loading Navbar...</p>;
-  // if (!navbar) return <p className="text-center py-10">No Navbar data found</p>;
-
   const logoSrc =
     (scrolled ? navbar?.logo_black : navbar?.logo_white) ||
     "/fallback-logo.png";
@@ -69,7 +66,7 @@ const Navbar = () => {
             <FaBars />
           </button>
 
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center">
             <Image
               src={logoSrc}
               alt="Company Logo"
