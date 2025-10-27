@@ -66,7 +66,7 @@ const Navbar = () => {
             <FaBars />
           </button>
 
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center shrink-0">
             <Image
               src={logoSrc}
               alt="Company Logo"
