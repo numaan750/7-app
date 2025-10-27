@@ -25,8 +25,10 @@ const LogoLoader = () => {
       <img
         src="/Logo-whit.png"
         alt="Logo"
-        className={`w-70 h-auto ${exit ? "animate-logoZoomOut" : "animate-logoZoomIn"}`}
-        style={{ animationFillMode: 'forwards' }} // ensure final zoom-out state persist
+        className={`w-70 h-auto ${
+          exit ? "animate-logoZoomOut" : "animate-logoZoomIn"
+        }`}
+        style={{ animationFillMode: "forwards" }} // ensure final zoom-out state persist
       />
     </div>
   );
