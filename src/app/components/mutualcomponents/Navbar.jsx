@@ -70,10 +70,14 @@ const Navbar = () => {
             <Image
               src={logoSrc}
               alt="Company Logo"
-              width={110}
-              height={35}
+              width={120}
+              height={40}
               priority
-              style={{ width: "120px", height: "40px" }}
+              style={{
+                width: "120px",
+                height: "auto",
+                objectFit: "contain",
+              }}
             />
           </Link>
 
