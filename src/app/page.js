@@ -1,11 +1,12 @@
 "use client";
-import React from 'react';
+import React, { useContext } from 'react';
 import Main from "../app/main/Main";
+import { AppContext } from '@/context/Appcontext';
 
-const Page = ({ setPageLoaded }) => {
+const Page = () => {
   return (
     <div>
-      <Main onLoadComplete={setPageLoaded} />
+      <Main/>
     </div>
   )
 }
